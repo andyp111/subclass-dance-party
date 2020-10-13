@@ -1,8 +1,5 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.apply(this, arguments);
-  this.$node.addClass('blinky');
-
-
 };
 
 BlinkyDancer.prototype = Object.create(MakeDancer.prototype);
@@ -12,13 +9,14 @@ BlinkyDancer.prototype.constructor = BlinkyDancer;
 
 BlinkyDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
-  this.$node.toggle(500);
+  this.$node.toggle(1000);
 };
 
 var MovingDancer = function(top, left, timeBetweenSteps) { //dancer slides from left to right
   MakeDancer.apply(this, arguments);
-  // this.$node.removeClass('dancer');
-  this.$node = $('<span class="mover"></span>');
+  this.$node.removeClass('dancer');
+  this.$node.addClass('notTL');
+  this.$node.html('<span class="mover"></span>');
 };
 
 MovingDancer.prototype = Object.create(MakeDancer.prototype);
@@ -26,14 +24,18 @@ MovingDancer.prototype.constructor = MovingDancer;
 
 MovingDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
-  // if (this.$node.position)
-  this.$node.toggle(1000).animate({left: '+=50px'});
-  this.$node.toggle(1000).animate({right: '-=50px'});
+  // if (this.$node.css() === 0) {
+  //   this.$node.animate({left: '+=25px'});
+  // }
+  this.$node.animate({left: '+=25px'});
+  this.$node.animate({right: '-=25px'});
 };
 
 var JumpingDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.apply(this, arguments);
-  this.$node = $('<span class="jumper"></span>');
+  this.$node.removeClass('dancer');
+  this.$node.addClass('notTL');
+  this.$node.html('<span class="jumper"></span>');
 
 };
 
@@ -42,8 +44,7 @@ JumpingDancer.prototype.constructor = JumpingDancer;
 
 JumpingDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this);
-  // this.$node = $('<span class="jumper"></span>');
 
 
-  this.$node.toggle();
+  // this.$node.toggle();
 };
