@@ -21,7 +21,7 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-    if (dancerFunctionName === 'MakeBlinkyDancer') {
+    if (dancerMakerFunctionName === 'BlinkyDancer') {
 
 
       var dancer = new dancerMakerFunction(
@@ -30,6 +30,12 @@ $(document).ready(function() {
         Math.random() * 1000
       );
       window.dancers.push(dancer);
+    } else {
+      dancer = new dancerMakerFunction(
+        $('body').height() * Math.random(),
+        $('body').width() * Math.random(),
+        Math.random() * 1000
+      );
     }
     $('body').append(dancer.$node);
   });

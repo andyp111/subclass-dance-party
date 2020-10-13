@@ -35,8 +35,8 @@ MakeDancer.prototype.setPosition = function(top, left) {
     top: top,
     left: left
   };
-  this.left = left;
-  this.top = top;
+  // this.left = left;
+  // this.top = top;
   this.$node.css(styleSettings);
 };
 
