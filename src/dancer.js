@@ -2,8 +2,8 @@
 var MakeDancer = function(top, left, timeBetweenSteps) {
 
   this.$node = $('<span class="dancer"></span>');
-  this.top = top;
-  this.left = left;
+  // this.top = top;
+  // this.left = left; already in the input for set position
   this.timeBetweenSteps = timeBetweenSteps;
   this.step();
   this.setPosition(top, left);
@@ -23,7 +23,7 @@ MakeDancer.prototype.step = function() {
   // the basic dancer doesn't do anything interesting at all on each step,
   // it just schedules the next step
   // this.location += 1;
-  setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps); //allows us to sepcify what the context is when we use bind, this is referring to MakeDancer, Blinky, Moving, Jumping
 };
 
 

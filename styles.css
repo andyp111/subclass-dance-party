@@ -7,10 +7,9 @@ body{
   background-color:#444;
   font-size: 18px;
   background-image: url(https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0065%2F4917%2F6438%2Fproducts%2Fa-groovy-looking-nightclub-dance-floor-background_576a9abb-3b3f-4ba8-9309-87eb60a6d911_1200x1200.jpg%3Fv%3D1549230950&f=1&nofb=1);
-  /* background-size: 100%;
-  hight: 100%; */
+  /* hight: 100%; */
   /* width: 150%; */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: contain;
 
 }
@@ -25,6 +24,10 @@ body, a:link, a:visited, a:active{
 .topbar{
   height:32px;
   background-color: #555;
+}
+.topbar .LineUp {
+  padding:5px 12px;
+  float:right;
 }
 .title{
   background-color: #777;

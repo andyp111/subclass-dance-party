@@ -15,14 +15,14 @@ $(document).ready(function() {
       var dancer = new dancerMakerFunction(
         $('body').height() * Math.random(),
         $('body').width() * Math.random(),
-        Math.random() * 100
+        Math.random() * 1000
       );
       window.dancers.push(dancer);
     } else {
       dancer = new dancerMakerFunction(
         $('body').height() * Math.random(),
         $('body').width() * Math.random(),
-        Math.random() * 100
+        Math.random() * 1000
       );
       window.dancers.push(dancer);
     }
@@ -35,5 +35,14 @@ $(document).ready(function() {
       window.dancers[i].setPosition(500, window.dancers[i]);
     }
   });
+  $('.DanceTogether').on('click', function(event) {
+    // var distance = 0;
+    // var max = 0;
+    // var min = 0;
+    for (var x = 0; x < window.dancers.length; x++) {
+      window.dancers[x].setPosition(window.dancers[x], 1000);
+    }
+  });
+
 });
 //class of image can be jumper
